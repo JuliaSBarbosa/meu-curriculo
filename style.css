@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --bg-primary: #0d0d0f;
+  --bg-secondary: #1a1a1f;
+  --text-primary: #e4e4eb;
+  --text-secondary: #a1a1b3;
+  --accent: #ab6efc;
+  --accent-light: #b47aff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(13, 13, 15, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 10;
+}
+
+.header .logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.nav a {
+  color: var(--text-primary);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--accent-light);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 6rem 1rem 3rem;
+}
+
+/*CSS ATUALIZADO para a foto de perfil*/
+.foto-perfil {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  /* Garante que a imagem preencha sem distorcer */
+  border-radius: 50%;
+  border: none;
+  margin-bottom: 2rem;
+
+  /* Efeito de "anel" (melhora o visual e usa a cor accent) */
+  box-shadow:
+    0 0 0 5px var(--bg-primary),
+    /* Anel interno (na cor de fundo) */
+    0 0 0 8px var(--accent);
+  /* Anel externo (na cor de destaque) */
+
+  transition: all 0.4s ease-in-out;
+}
+
+/* Efeito ao passar o mouse*/
+.foto-perfil:hover {
+  box-shadow:
+    0 0 0 5px var(--bg-primary),
+    0 0 0 15px rgba(171, 110, 252, 0.2),
+    0 0 0 8px var(--accent);
+}
+
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero .btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--accent-light);
+}
+
+.social a {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.social a:hover {
+  color: var(--accent);
+}
+
+/* Seções gerais */
+section {
+  padding: 6rem 3rem;
+}
+
+section h2 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.formacao {
+  /* Mantém o padding base, mas vamos centralizar o timeline */
+  background-color: var(--bg-primary);
+  /* Garante que a seção tenha o fundo primário */
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* A Linha Vertical no centro */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  /* Posição central da linha */
+  width: 2px;
+  background-color: var(--bg-secondary);
+  /* Cor sutil para a linha */
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin-bottom: 2.5rem;
+  /* Espaço entre os itens */
+  position: relative;
+}
+
+/* O "Ponto" de Destaque */
+.timeline-dot {
+  position: absolute;
+  top: 5px;
+  /* Alinha com o topo do conteúdo */
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: var(--accent);
+  /* O ponto na sua cor de destaque */
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  /* Garante que fique sobre a linha */
+  transition: background-color 0.3s;
+}
+
+/* Conteúdo (Card) */
+.timeline-content {
+  width: 45%;
+  /* O card ocupa quase metade do espaço */
+  padding: 1.5rem;
+  position: relative;
+  background: var(--bg-secondary);
+  /* Fundo do seu card */
+  border-color: #2a2a33;
+  /* Mantém a borda sutil do seu CSS de card */
+}
+
+/* Alternando a posição dos cards */
+.timeline-item:nth-child(odd) .timeline-content {
+  left: 0;
+  /* Coloca o item ímpar na esquerda */
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  left: 55%;
+  /* Coloca o item par na direita (50% da linha + 5% de gap) */
+}
+
+/* Títulos e Descrições */
+.timeline-content h3 {
+  color: var(--accent-light);
+  /* Destaque no título do curso/certificado */
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.timeline-content h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.timeline-content .data {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.timeline-content .descricao {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+
+/* Remove a linha de 50% e a coloca à esquerda */
+.timeline::before {
+  left: 20px;
+  transform: translateX(0);
+}
+
+/* Coloca todos os itens à esquerda */
+.timeline-item:nth-child(odd) .timeline-content,
+.timeline-item:nth-child(even) .timeline-content {
+  width: calc(100% - 60px);
+  /* Ocupa a largura menos o espaço da margem */
+  left: 60px;
+  /* Desloca o card para a direita da linha */
+}
+
+/* Move o ponto para a esquerda */
+.timeline-dot {
+  left: 20px;
+  transform: translateX(-50%);
+}
+
+/* Adiciona um triângulo sutil no card para apontar para a linha */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  /* Cria o triângulo apontando para a esquerda */
+  border-color: transparent var(--bg-secondary) transparent transparent;
+  left: -10px;
+  top: 20px;
+}
+
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+  border: 1px solid #2a2a33;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(162, 89, 255, 0.3);
+}
+
+/* Projetos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.projeto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.projeto img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 31, 0.9);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+  text-align: center;
+  padding: 1rem;
+}
+
+.projeto:hover .overlay {
+  opacity: 1;
+}
+
+.overlay .btn {
+  margin-top: 1rem;
+}
+
+/* Contato */
+.contato p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.contato .social {
+  text-align: center;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
