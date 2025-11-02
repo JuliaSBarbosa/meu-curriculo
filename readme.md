@@ -16,5 +16,5 @@ Oi! Este é o meu site currículo, feito por mim para falar sobre quem eu sou, o
 É só abrir o `index.html` no navegador ou acessar pelo GitHub Pages.
 
 ```bash
-git clone https://github.com/JuliaSBarbosa/seu-repositorio.git
+git clone https://github.com/JuliaSBarbosa/meu-curriculo.git
 cd seu-repositorio
