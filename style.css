@@ -9,7 +9,7 @@
   --accent-light: #b47aff;
 }
 
-/* Reset */
+/*Estilo geral*/
 * {
   margin: 0;
   padding: 0;
@@ -66,7 +66,7 @@ body {
   padding: 6rem 1rem 3rem;
 }
 
-/*CSS ATUALIZADO para a foto de perfil*/
+/*foto de perfil*/
 .foto-perfil {
   width: 250px;
   height: 250px;
@@ -136,7 +136,7 @@ section h2 {
 }
 
 .formacao {
-  /* Mantém o padding base, mas vamos centralizar o timeline */
+  /* Mantém o padding base, mas centraliza o timeline */
   background-color: var(--bg-primary);
   /* Garante que a seção tenha o fundo primário */
 }
@@ -176,11 +176,11 @@ section h2 {
   width: 15px;
   height: 15px;
   background-color: var(--accent);
-  /* O ponto na sua cor de destaque */
+  /* O ponto na cor de destaque */
   border-radius: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  /* Garante que fique sobre a linha */
+  /* Garante que fique sob a linha */
   transition: background-color 0.3s;
 }
 
@@ -191,9 +191,9 @@ section h2 {
   padding: 1.5rem;
   position: relative;
   background: var(--bg-secondary);
-  /* Fundo do seu card */
+  /* Fundo*/
   border-color: #2a2a33;
-  /* Mantém a borda sutil do seu CSS de card */
+  /* Mantém a borda sutil*/
 }
 
 /* Alternando a posição dos cards */
@@ -210,7 +210,7 @@ section h2 {
 /* Títulos e Descrições */
 .timeline-content h3 {
   color: var(--accent-light);
-  /* Destaque no título do curso/certificado */
+  /* Destaque no título do curso*/
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -272,7 +272,7 @@ section h2 {
 }
 
 
-/* Cards */
+/* Cards Projetos*/
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -292,47 +292,6 @@ section h2 {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 15px rgba(162, 89, 255, 0.3);
-}
-
-/* Projetos */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.projeto {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.projeto img {
-  width: 100%;
-  display: block;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 26, 31, 0.9);
-  color: var(--text-primary);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s;
-  text-align: center;
-  padding: 1rem;
-}
-
-.projeto:hover .overlay {
-  opacity: 1;
-}
-
-.overlay .btn {
-  margin-top: 1rem;
 }
 
 /* Contato */
