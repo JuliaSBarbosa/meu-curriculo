@@ -135,10 +135,157 @@ section h2 {
   text-align: center;
 }
 
-.formacao {
-  /* Mantém o padding base, mas centraliza o timeline */
+/* Seção Sobre mim - Novo Estilo */
+.sobre {
   background-color: var(--bg-primary);
-  /* Garante que a seção tenha o fundo primário */
+  padding: 6rem 3rem;
+}
+
+.sobre-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-conteudo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.sobre-coluna h3 {
+  color: var(--accent-light);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  text-align: center;
+}
+
+.sobre-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sobre-badge {
+  background: var(--bg-secondary);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #2a2a33;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.sobre-badge:hover {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(171, 110, 252, 0.1) 100%);
+  border-color: var(--accent);
+  transform: translateX(10px);
+  box-shadow: 0 5px 20px rgba(171, 110, 252, 0.2);
+}
+
+.sobre-badge i {
+  color: var(--accent);
+  font-size: 1.5rem;
+  width: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.sobre-badge:hover i {
+  color: var(--accent-light);
+  transform: scale(1.2);
+}
+
+.sobre-badge span {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* Responsividade para Sobre mim */
+@media (max-width: 968px) {
+  .sobre-conteudo {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre {
+    padding: 4rem 2rem;
+  }
+
+  .sobre-coluna h3 {
+    font-size: 1.3rem;
+  }
+
+  .sobre-badge {
+    padding: 1rem 1.2rem;
+  }
+
+  .sobre-badge span {
+    font-size: 0.9rem;
+  }
+}
+
+.formacao {
+  background-color: var(--bg-primary);
+}
+
+/* Estilo específico para a seção formacao - layout de grid sem timeline */
+.formacao .formacao-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formacao .formacao-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #2a2a33;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.formacao .formacao-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(171, 110, 252, 0.2);
+  border-left-color: var(--accent-light);
+}
+
+.formacao .formacao-card h3 {
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.formacao .formacao-card h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.formacao .formacao-card .data {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.formacao .formacao-card .descricao {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .timeline {
@@ -251,6 +398,15 @@ section h2 {
   /* Desloca o card para a direita da linha */
 }
 
+/* Aumentar largura das cards na seção cursos */
+.cursos .timeline-item:nth-child(odd) .timeline-content,
+.cursos .timeline-item:nth-child(even) .timeline-content {
+  width: calc(100% - 40px);
+  /* Aumenta a largura das cards */
+  max-width: 800px;
+  /* Define uma largura máxima maior */
+}
+
 /* Move o ponto para a esquerda */
 .timeline-dot {
   left: 20px;
@@ -292,6 +448,155 @@ section h2 {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 15px rgba(162, 89, 255, 0.3);
+}
+
+/* Imagem nos cards de projetos */
+.projetos .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #2a2a33;
+}
+
+/* Estilo para a seção Experiências - Layout Vertical com Linha */
+.experiencias {
+  background-color: var(--bg-primary);
+}
+
+.experiencias-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 3rem;
+}
+
+/* Linha vertical conectando as experiências */
+.experiencias-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+}
+
+.experiencia-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.experiencia-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Ícone circular */
+.experiencia-icon {
+  position: absolute;
+  left: -3rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1.2rem;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.experiencia-item:hover .experiencia-icon {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(171, 110, 252, 0.5);
+}
+
+/* Conteúdo da experiência */
+.experiencia-content {
+  background: var(--bg-secondary);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.experiencia-item:hover .experiencia-content {
+  border-left-color: var(--accent-light);
+  box-shadow: 0 4px 15px rgba(171, 110, 252, 0.15);
+  transform: translateX(5px);
+}
+
+.experiencia-cargo {
+  color: var(--accent-light);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experiencia-empresa {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.experiencia-periodo {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #2a2a33;
+}
+
+.experiencia-descricao {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.experiencia-descricao p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .experiencias-timeline {
+    padding-left: 2.5rem;
+  }
+
+  .experiencia-icon {
+    left: -2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .experiencias-timeline::before {
+    left: 1.25rem;
+  }
+
+  .experiencia-content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .experiencia-cargo {
+    font-size: 1.1rem;
+  }
+
+  .experiencia-empresa {
+    font-size: 1rem;
+  }
 }
 
 /* Contato */
