@@ -2,7 +2,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este é um site currículo responsivo desenvolvido com HTML, CSS e JavaScript, apresentando informações sobre minha trajetória profissional, formação acadêmica, experiências e projetos desenvolvidos.
+Este é um site currículo responsivo desenvolvido com HTML e CSS, apresentando informações sobre minha trajetória profissional, formação acadêmica, experiências e projetos desenvolvidos.
 
 ## ✨ Funcionalidades
 
